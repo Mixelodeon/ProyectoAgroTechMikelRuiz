@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech</title>
+    <!-- Archivo de estilos CSS -->
+    <link rel="stylesheet" href="./estilos.css">
+    <!-- Script principal, el cual llamara a los demas script necesarios -->
+    <script src="./script.js" type="module"></script>
+    <!-- Libreria de notificaciones personalizadas Toastify, estilos y script -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Libreria Leaflet de geolocalizacion, estilo CSS y script -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Libreria de dataTables CSS, para volcar los datos de openMeteo sobre la tabla -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- Librerias de jQuery y DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- Libreria TensorFlow para subir una imagen y que sea analizada por una IA -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+    
+    <div id="seccion-botones">
+        <button id="botonRegistro">Registrarse</button>
+        <button id="botonLogin">Iniciar Sesion</button>
+        <button id="botonTensorFlow">Usar TensorFlow</button>
+        <button id="botonVolverMapa">Volver al Mapa</button>
+        <button id="botonLogout">Cerrar Sesion</button>
+    </div>
+    
+    <div id="contenedorPresentacion">
+        <h1>Bienvenido a AgroTech: Innovación en Agricultura</h1>
+        <p>
+            Descubre cómo la tecnología puede transformar el mundo agrícola. En <strong>AgroTech</strong> te ofrecemos 
+            herramientas innovadoras para optimizar la producción, mejorar la gestión y aprovechar al máximo los recursos naturales.
+        </p>
+        <ul>
+            <li>📡 <strong>Ubicacion:</strong> El usuario podrá ver un mapa con su ubicacion y asi le permitira buscar tierras en sus alrededores.</li>
+            <li>🌦️ <strong>Predicción Climática:</strong> Consulta datos meteorológicos en tiempo real, presentados en una tabla.</li>
+            <li>📊 <strong>Análisis de Tierras:</strong> Al usuario se le permite subir una imagen de sus plantas y asi una inteligencia artificial
+                            podrá valorar la salud de la misma.</li>
+            <li>🌍 <strong>Control de usuarios:</strong> Para disfrutar de estas tecnologias deberá registrarse e iniciar sesion.</li>
+        </ul>
+        <p>
+            Únete a la nueva era de la agricultura inteligente. ¡Optimiza tu producción y cuida el planeta! 🌿🌾 
+        </p>
+    </div>
+    
+
+    <div id="divRegistro">
+        <form id="registro-form">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="registro-email" placeholder="Introduce el Correo...">
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="registro-password" placeholder="*****">
+            <div id="botones-forms">
+                <button type="submit" id="botonEnvioRegistro">Registrarse</button>
+                <br><br>
+                <button type="reset" id="cerrarRegistro">Cerrar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="divLogin">
+        <form id="login-form">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="login-email" placeholder="Introduce el Correo...">
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="login-password" placeholder="*****">
+            <div class="botonesLogin">
+                <button type="submit" id="botonEnvioLogin">Iniciar Sesion</button>
+                <br><br>
+                <button type="button" id="irCambioPassword">Recuperar Contraseña</button>
+                <br><br>
+                <button type="reset" id="cerrarLogin">Cerrar</button>
+            </div>
+        </form>
+    </div>
+    <div id="divRecuPassword">
+        <label for="email"></label>
+        <b>(Le enviaremos un correo)</b>
+        <input type="email" id="recu-email" placeholder="Introduce el Correo...">
+        <br><br>
+        <button id="botonCambiarPassword">Cambiar contraseña</button>
+        <br><br>
+        <button type="reset" id="cerrarRecu">Cerrar</button>
+    </div>
+    
+    <!-- Apartado del mapa, se mostrara cuando el usuario inicie seion -->
+    <div id="map"></div>
+    <!-- Apartado de tabla con datos del clima -->
+    <div id="contenedorTabla"></div>
+</body>
+</html>

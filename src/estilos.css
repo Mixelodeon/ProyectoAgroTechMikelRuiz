@@ -1,0 +1,404 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor de los botones en la esquina superior derecha */
+#seccion-botones {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row; /* Alineación horizontal de los botones */
+    gap: 15px; /* Espaciado entre botones */
+    align-items: center; /* Alineacion veritical */
+}
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 150px; /* Tamaño uniforme */
+    text-align: center;
+}
+/* Estilo del contenedor de presentación */
+#contenedorPresentacion {
+    background: linear-gradient(135deg, #52a0f3, #0066cc);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    text-align: justify;
+    margin-top: 25px;
+    transition: transform 0.3s ease;
+}
+
+#contenedorPresentacion:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo del párrafo dentro del contenedor */
+#contenedorPresentacion p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Estilo de la lista */
+#contenedorPresentacion ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Estilo de los elementos de la lista con iconos */
+#contenedorPresentacion li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 30px;
+    position: relative;
+}
+
+/* Icono decorativo en cada elemento de la lista */
+#contenedorPresentacion li::before {
+    content: "✔";
+    color: #ffcc00;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+#botonRegistro:hover, #botonLogin:hover{
+    background-color: #28a745;
+}
+
+/* Contenedor de los formularios */
+#divRegistro, #divLogin, #divRecuPassword {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+/* Contenedor de botones en el login */
+.botones-login {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Botones del login */
+.botones-login button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 250%;
+    align-self: center;
+}
+/* Asegurar que todos los botones tengan el mismo tamaño */
+#botonEnvioLogin, #irCambioPassword, #cerrarLogin {
+    width: 100%;
+    max-width: 180px; /* Un límite razonable */
+}
+
+/* Diferentes colores para cada botón */
+#botonEnvioLogin {
+    background-color: #28a745;
+}
+
+#botonEnvioLogin:hover {
+    background-color: #218838;
+}
+
+#irCambioPassword {
+    background-color: #ffc107;
+    color: #333;
+}
+
+#irCambioPassword:hover {
+    background-color: #e0a800;
+}
+
+#cerrarLogin:hover, #cerrarRegistro:hover, #cerrarRecu:hover {
+    background-color: #c82333;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Campos de entrada */
+input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Botón de enviar */
+button[type="submit"] {
+    background-color: #28a745;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+#botonLogout, #botonTensorFlow, #botonVolverMapa {
+    display: none;
+}
+#botonLogout:hover {
+    background-color: #c82333;
+}
+#botonTensorFlow:hover, #botonVolverMapa:hover, #botonDataTables:hover, #botonMostrarMapa:hover{
+    background-color: #28a745;
+}
+
+/* Estilo del mapa */
+#map {
+    background-color: none !important;
+    display: block;
+    width: 70%;
+    height: 700px;
+    margin: 20px auto;
+    display: none;
+    border: 2px solid #96ff96;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#botonMostrarMapa {
+    display: none;
+}
+
+/* Estilo general de la tabla */
+#tablaClima {
+    width: 80%;
+    margin: 20px auto;
+    color: white;
+    border: 1px solid white;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Estilo de las celdas */
+#tablaClima th, #tablaClima td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+/* Estilo del encabezado */
+#tablaClima thead {
+    background-color: #222;
+    color: #96ff96;
+}
+
+/* Filas impares */
+#tablaClima tbody tr:nth-child(odd) {
+    background-color: #444;
+}
+
+/* Filas al pasar el mouse */
+#tablaClima tbody tr:hover {
+    background-color: #555;
+}
+
+#contenedorTabla {
+    display: none;
+}
+
+#contenedorTensorFlow {
+    color: white;
+}
+
+/* Botones dentro del contenedor TensorFlow */
+#contenedorTensorFlow button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 150px;
+    text-align: center;
+}
+#contenedorTensorFlow button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Efecto hover */
+#contenedorTensorFlow button:hover {
+    background-color: #0056b3;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Pantallas menores a 768px (Tablets y móviles en orientación vertical) */
+@media (max-width: 768px) {
+    #seccion-botones {
+        top: 10px;
+        right: 10px;
+        flex-direction: column; /* Alineación vertical */
+        gap: 10px;
+    }
+
+    #contenedorPresentacion{
+        max-width: 60%;
+        max-height: 80%;
+    }
+    #contenedorPresentacion h1{
+        font-size: 120%;
+        text-align: center;
+    }
+    #contenedorPresentacion p{
+        font-size: 90%;
+    }
+    #contenedorPresentacion li, ul{
+        font-size: 85%;
+    }
+
+    button {
+        width: 100px; /* Botones más pequeños */
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #divRegistro, #divLogin {
+        width: 90%; /* Formularios más pequeños */
+        max-width: 280px;
+    }
+
+    #map {
+        width: 90%;
+        height: 400px; /* Reducir tamaño del mapa */
+    }
+
+    #tablaClima {
+        font-size: 10px;
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .botones-login {
+        gap: 10px; /* Reducimos el espacio */
+    }
+
+    .botones-login button {
+        font-size: 12px;
+        padding: 8px;
+        max-width: 200px; /* Un tamaño más compacto */
+    }
+}
+
+/* Pantallas menores a 480px (Móviles pequeños) */
+@media (max-width: 480px) {
+    button {
+        width: 90px;
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    #seccion-botones {
+        top: 5px;
+        right: 5px;
+        gap: 5px;
+    }
+
+    #tablaClima th, #tablaClima td {
+        padding: 8px;
+    }
+    h2{
+        width: 60%;
+        text-align: center;
+        margin-left: 5ch;
+        font-size: 20px;
+    }
+    #contenedorTensorFlow img {
+        max-width: 50%; /* Reduce el tamaño de la imagen */
+        max-height: 450px;
+        margin-left: 10%;
+    }
+    #contenedorTensorFlow button {
+        padding: 10px 20px;
+        max-width: 30%;
+        margin-left: 20%;
+        margin-bottom: 3%;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s ease;
+    }
+    .botones-login{
+        gap: 8px;
+    }
+    .botones-login button{
+        font-size: 10px;
+        padding: 6px;
+        max-width: 180px;
+    }
+}
