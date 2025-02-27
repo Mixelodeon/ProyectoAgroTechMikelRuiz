@@ -40,6 +40,7 @@ let botonRegistro = document.getElementById("botonRegistro");
 let formRegistro = document.getElementById("registro-form");
 let divRegistro = document.getElementById("divRegistro");
 let cerrarRegistro = document.getElementById("cerrarRegistro");
+let botonEnvioRegistro = document.getElementById("botonEnvioRegistro");
 
 // Obtener los elementos del Login:
 let botonLogin = document.getElementById("botonLogin");
@@ -80,6 +81,10 @@ botonRegistro.addEventListener("click", () => {
     // Ocultar contenedor de presentacion
     contenedorPresentacion.style.display = "none";
 });
+botonEnvioRegistro.addEventListener("click", () => {
+    contenedorPresentacion.style = "block";
+    divRegistro .style.display = "none";
+})
 
 // Evento para reguistrar un usuario al enviar el formulario
 formRegistro.addEventListener("submit", (e) => {
